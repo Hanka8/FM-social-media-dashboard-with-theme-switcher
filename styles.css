@@ -1,0 +1,461 @@
+:root {
+  /* primary colors*/
+  --lime: hsl(163, 72%, 41%);
+  --brightRed: hsl(356, 69%, 56%);
+  --facebook: hsl(208, 92%, 53%);
+  --twitter: hsl(203, 89%, 53%);
+  --youtube: hsl(348, 97%, 39%);
+  --instagramG: linear-gradient(to right top, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+  /* light theme */
+  --toggle: hsl(230, 22%, 74%);
+  --background: hsl(0, 0%, 100%);
+  --topBackground: hsl(225, 100%, 98%);
+  --cardBackground: hsl(227, 47%, 96%);
+  --textLight: hsl(228, 12%, 44%);
+  --textDark: hsl(230, 17%, 14%);
+  --cardHover: #e1e4f0;
+  --hr: #848BAB;
+  /* font */
+  --fontSize: calc(14rem / 16);
+  --fontNormal: 400;
+  --fontBold: 700;
+
+  /* dark theme */
+  --toggleD: linear-gradient(to right top, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+  --backgroundDark: hsl(230, 17%, 14%);
+  --topBackgroundDark:  hsl(232, 19%, 15%);
+  --cardBackgroundDark: hsl(228, 28%, 20%);
+  --textBlueDark: hsl(228, 34%, 66%);
+  --textWhiteDark: hsl(0, 0%, 100%);
+  --cardHoverDark: #252b42;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  background: var(--background);
+  font-size: var(--fontSize);
+}
+
+header, main {
+  padding: 36px calc(165rem/16) 75px calc(165rem/16);
+}
+
+/* HEADER */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 154px;
+  background-color: var(--topBackground);
+  color: var(--textDark);
+}
+
+.heading h1 {
+  font-size: calc(28rem/16);
+  margin-bottom: 5px;
+}
+
+hr {
+  display: none;
+}
+
+/* ___________CHECKBOX____________ */
+
+input[type="checkbox"].toggle {
+  opacity: 0;
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+}
+
+input[type="checkbox"].toggle + label {
+  color: var(--textLight);
+  position: relative;
+  cursor: pointer;
+  align-self: center;
+  margin-right: 61px;
+}
+
+input[type="checkbox"].toggle + label::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  left: calc(88rem/16);
+  top: calc(-4rem/16);
+  width: calc(48rem/16);
+  height: calc(24rem/16);
+  background: var(--toggle);
+  border-radius: calc(12rem/16);
+}
+
+input[type="checkbox"].toggle + label:hover::after {
+  background: linear-gradient(to right top, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+  transition: .5s;
+}
+
+input[type="checkbox"].toggle + label::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  left: calc(92rem/16);
+  top: calc(-1rem/16);
+  width: calc(18rem/16);
+  height: calc(18rem/16);
+  border-radius: 50%;
+  background-color: var(--topBackground);
+  z-index: 1;
+}
+
+input[type="checkbox"].toggle:checked + label::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  left: calc(115rem/16);
+  top: calc(-1rem/16);
+  width: calc(18rem/16);
+  height: calc(18rem/16);
+  border-radius: 50%;
+  background-color: var(--topBackground);
+  z-index: 1;
+}
+
+
+/* MAIN */
+
+/* __________SECTION 1___________ */
+
+main {
+  margin-top: -147px;
+}
+
+.section1 {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+
+}
+
+.section1 div {
+  background-color: var(--cardBackground);
+  flex-basis: 255px;
+  height: calc(216rem/16);
+  text-align: center;
+  border-radius: 5px;
+  flex-grow: 1;
+}
+
+.section1 div p:nth-child(1) {
+  margin-top: 32px;
+  color: var(--textLight);
+}
+
+.section1 div p:nth-child(2) {
+  color: var(--textDark);
+  font-size: calc(56rem/16);
+  line-height: calc(48rem/16);
+  margin-top: 28px;
+  font-weight: var(--fontBold);
+}
+
+.section1 div p:nth-child(3) {
+  margin-top: 9px;
+  color: var(--textLight);
+  font-size: calc(12rem/16);
+  text-transform: uppercase;
+  letter-spacing: calc(5rem/16);
+}
+
+.section1 div p:nth-child(4) {
+  font-size: calc(12rem/16);
+  display: block;
+  width: calc(90rem/16);
+  margin: 25px auto 0 auto;
+}
+
+.greenBig {
+  color: var(--lime);
+}
+
+.greenBig span {
+  float: left;
+  display: block;
+  position: relative;
+  top: calc(2rem/16);
+  width: calc(10rem/16);
+  height: calc(10rem/16);
+  background-image: url(images/icon-up.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.redBig {
+  color: var(--brightRed);
+}
+
+.redBig span {
+  float: left;
+  display: block;
+  position: relative;
+  top: calc(2rem/16);
+  width: calc(10rem/16);
+  height: calc(10rem/16);
+  background-image: url(images/icon-down.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.facebook span, .twitter span {
+  margin-right: -10px;
+}
+
+/* top lines */
+
+.facebook {
+  border-top: 4px solid var(--facebook);
+}
+
+.twitter {
+  border-top: 4px solid var(--twitter);
+}
+
+.instagram {
+  border-top: 4px solid white;
+  position: relative;
+}
+
+.instagram::before {
+  content:"";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  top: -4px;
+  left: 0;
+  background: var(--instagramG);
+}
+
+.youtube {
+  border-top: 4px solid var(--youtube);
+}
+
+/* _________________SECTION 2____________________ */
+
+h2 {
+  font-weight: var(--fontBold);
+  color: var(--textLight);
+  font-size: calc(24rem/16);
+  margin-top: calc(46rem/16);
+  margin-bottom: calc(24rem/16);
+}
+
+.section2 {
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 1fr 1fr 1fr;
+  grid-column-gap: 30px;
+  grid-row-gap: 24px;
+}
+
+.section2 .card {
+  background-color: var(--cardBackground);
+  border-radius: 5px;
+  padding: 26px 31px 28px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 21px;
+  font-weight: var(--fontBold);
+}
+
+
+/* card elements */
+
+.card .text {
+  float:left;
+  color: var(--textLight);
+}
+
+.card img {
+  float: right;
+}
+
+.card .number {
+  float:left;
+  font-size: 2rem;
+  line-height: 2rem;
+}
+
+.number {
+  color: var(--textDark);
+}
+
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+}
+
+.card .percent {
+  float:right;
+  font-size: calc(12rem/16);
+}
+
+.green {
+  color: var(--lime);
+}
+
+.green::before {
+  content:"";
+  display: block;
+  position: relative;
+  right: calc(16rem/16);
+  top: calc(12rem/16);
+  width: calc(10rem/16);
+  height: calc(10rem/16);
+  background-image: url(images/icon-up.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
+}
+
+.red {
+  color: var(--brightRed);
+}
+
+.red::before {
+  content:"";
+  display: block;
+  position: relative;
+  right: calc(16rem/16);
+  top: calc(13rem/16);
+  width: calc(10rem/16);
+  height: calc(10rem/16);
+  background-image: url(images/icon-down.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
+}
+
+/* hover cards */
+
+.section1 div:hover, .section2 .card:hover {
+  background-color: var(--cardHover);
+  cursor: pointer;
+  transition: .3s ease;
+}
+
+/* ####################################
+################# MEDIA ###############
+####################################### */
+
+@media (max-width: 1100px) {
+  header, main {
+    padding: 36px calc(65rem/16) 75px calc(65rem/16);
+  }
+  main {
+    margin-top: -80px;
+  }
+}
+
+@media (max-width: 850px) {
+
+  .section1 {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+  }
+
+  .section2 {
+    grid-template: 1fr 1fr / 1fr 1fr;
+  }
+}
+
+@media (max-width:560px) {
+  header, main {
+    padding: 36px calc(25rem/16) 75px calc(24rem/16);
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .heading h1 {
+    font-size: calc(24rem/16);
+  }
+
+  .heading p {
+    margin-bottom: 24px;
+  }
+
+  hr {
+    display: flex;
+    width: 100%;
+    margin-bottom: 16px;
+    color: var(--hr);
+  }
+
+  .section1 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .section2 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* _______checkbox___________ */
+  input[type="checkbox"].toggle + label {
+    position:  static;
+  }
+
+  input[type="checkbox"].toggle + label::after {
+    inset: 0;
+    left: calc(0.83*100vw);
+    top: 125px;
+  }
+
+  input[type="checkbox"].toggle + label::before {
+    inset: 0;
+    top: 128px;
+    left: calc(0.84*100vw);
+  }
+
+  input[type="checkbox"].toggle:checked + label::before {
+    inset: 0;
+    top: 128px;
+    left: calc(0.895*100vw);
+  }
+}
+
+@media (max-width: 400px) {
+  input[type="checkbox"].toggle + label::after {
+    inset: 0;
+    left: calc(0.8*100vw);
+    top: 125px;
+  }
+
+  input[type="checkbox"].toggle + label::before {
+    inset: 0;
+    top: 128px;
+    left: calc(0.81*100vw);
+  }
+
+  input[type="checkbox"].toggle:checked + label::before {
+    inset: 0;
+    top: 128px;
+    left: calc(0.87*100vw);
+  }
+}
